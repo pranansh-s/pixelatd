@@ -29,8 +29,8 @@ const Popup: React.FC<Props> = ({ name }) => {
                     <p className='text-left md:ml-6 mx-16 m-1 self-start text-white/40 font-Hind md:text-sm text-base'>Your goal is to correctly identify the movie poster in the limited 5 guesses, after each guess you&rsquo;ll get more and more hints in the form of less blurred poster and genres of the afore mentioned movie</p>
                     <p className='text-left md:ml-6 mx-16 m-1 self-start text-white/40 font-Hind md:text-sm text-base'>All information used was taken from <em>moviemania.io</em> and <em>imdb.com</em> and is only intended for entertainment purposes - no copyright infringement intended</p>
                     <div className='flex flex-row relative md:space-x-2 space-x-6 md:ml-6 ml-16 -bottom-10 self-start'>
-                        <a className='hover:animate-size' target="_blank" rel="noopener" href="https://www.instagram.com/prononshu/"><Image width={35} height={35} src={insta} alt="Instagram" /></a>
-                        <a className='hover:animate-size' target="_blank" rel="noopener" href="https://github.com/pranansh-s"><Image width={35} height={35} src={github} alt="Github" /></a>
+                        <a className='hover:animate-size' target="_blank" rel="noreferrer" href="https://www.instagram.com/prononshu/"><Image width={35} height={35} src={insta} alt="Instagram" /></a>
+                        <a className='hover:animate-size' target="_blank" rel="noreferrer" href="https://github.com/pranansh-s"><Image width={35} height={35} src={github} alt="Github" /></a>
                     </div>
                 </>}
             </div>
