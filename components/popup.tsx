@@ -14,7 +14,7 @@ const Popup: React.FC<Props> = ({ name }) => {
                 <Image className='opacity-5' src="https://media.istockphoto.com/photos/background-of-fresh-made-popcorn-picture-id149066514?k=20&m=149066514&s=612x612&w=0&h=xJWeVgSCXaqj4A-CPVZeJrFoH98StvyEAs9SJQMZKVo=" layout='fill'/>
                 {name != "help" ? 
                 <>
-                    <span className='md:text-xl text-2xl text-white/40 font-Francois'>{name == "won" ? `Congratulations! You Got It in ${context?.guesses.length} Guess${context?.guesses.length > 1 ? 'es' : '' }` : name == "lost" ? `Better Luck Next Time, It was...` : ""}</span>
+                    <span className='md:text-xl text-2xl text-white/40 font-Francois'>{name == "won" ? `Congratulations! You Got It in ${context?.guesses.length} Guess${context?.guesses.length || 5 > 1 ? 'es' : '' }` : name == "lost" ? `Better Luck Next Time, It was...` : ""}</span>
                     <hr className='w-96 opacity-40'/>
                     <span className='md:text-2xl text-3xl text-white font-Francois p-5'>{context?.movieName}</span>
                     <div className='bg-black/95 rounded-md w-full flex justify-center py-3 p-5'>
