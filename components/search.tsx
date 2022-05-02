@@ -64,7 +64,7 @@ const Search: React.FC = () => {
         <>  
             <form onSubmit={updateList} className='md:w-[26rem] md:-ml-16 bg-primary w-[25rem] h-16 m-2 rounded-md overflow-hidden flex flex-row items-center justify-center'>
                 <div className='md:w-7 w-5 md:h-7 h-5 md:ml-0 -ml-1'>
-                    <Image src={searchI}/> 
+                    <Image src={searchI} alt="Search"/> 
                 </div>
                 {context?.movieName ? <input ref={input} onChange={(e) => setInputText(e.currentTarget.value)} className='md:w-64 w-64 md:ml-3 ml-3 font-Hind focus:outline-none h-12 bg-transparent text-ellipsis text-white'/> : <div className='md:w-64 w-64 md:ml-3 ml-3'></div>}
                 <button className='bg-secondary hover:bg-orange-800 active:animate-size relative md:w-20 w-[5rem] md:text-xl text-xl font-Gidugu -right-[1rem] md:py-[0.9rem] py-4 rounded-md uppercase text-white'>Submit</button>

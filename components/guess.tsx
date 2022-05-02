@@ -13,6 +13,7 @@ const Guess: React.FC<item> = ({ name }) => {
                 src={crossI}            
                 width={17}
                 height={17}
+                alt="close"
             />            
             <span className='md:text-md ml-5 font-Hind text-white text-ellipsis text-xs'>{name ? name : ""}</span>
         </div>
