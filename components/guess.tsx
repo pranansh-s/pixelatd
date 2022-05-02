@@ -2,9 +2,10 @@ import React from 'react'
 import Image from 'next/image'
 
 import crossI from '../public/icon_cross-mark.svg'
-import Props from '../utils/contexts'
 
-const Guess: React.FC<Props> = ({ name }) => {    
+interface item{ name: string | null }
+
+const Guess: React.FC<item> = ({ name }) => {    
     return(
         <div className={`md:w-[30rem] w-[25rem] flex flex-row justify-left px-5 py-3 border-[3px] rounded-md m-[0.15rem] border-accent ${name ? 'backdrop-blur-xl' : '' } z-10`}>
             <Image 
