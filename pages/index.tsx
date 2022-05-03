@@ -24,7 +24,12 @@ const Home: NextPage = () => {
   }
 
   const fetching = () => {
-    fetch(`/api/imdb`)
+    fetch(`/api/imdb`, {
+      headers : { 
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+       }
+    })
       .then(res => res.json())
       .then(res => {
         setAnswer(res.name)
@@ -32,18 +37,15 @@ const Home: NextPage = () => {
         setShort(res.short)
         fetch(`/api/answer/${encodeURIComponent(res.url)}`)
         .then(r => r.json())
-        .then(r => setAnswerUrl(r.url)) });
+        .then(r => setAnswerUrl(r.url)) })
+        .catch(err => {
+          console.log(err, "trying again")
+          window.location.reload()
+        });
   }
   
   useEffect(() => {
-    try{
-      fetching()
-    }
-    catch(error){
-      console.log("Failed Once Trying Again...")
-      fetching()
-    }
-
+    fetching()
     }, [])
     return (
       <div className="min-h-screen min-w-fit p-8 flex flex-col text-center items-center justify-center select-none relative bg-cover bg-center bg-[url('../public/background.png')] space-y-1">
