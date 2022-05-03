@@ -17,7 +17,6 @@ import Document, {
         <Html>
           <Head>
           <link rel="icon" href="/favicon.ico" />
-          <title>Pixelatd</title>
           <meta name="description" content="Movie guessing game derived from the wordle fad"/>
           <link href="https://fonts.googleapis.com/css2?family=Francois+One&family=Gidugu&family=Hind+Madurai:wght@600&display=swap" rel="stylesheet" />
           </Head>
