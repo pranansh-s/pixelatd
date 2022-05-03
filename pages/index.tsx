@@ -22,17 +22,28 @@ const Home: NextPage = () => {
   const newList = (newGuess: string) => {
     updateGuess(guess => [...guess, newGuess])
   }
+
+  const fetching = () => {
+    fetch(`/api/imdb`)
+      .then(res => res.json())
+      .then(res => {
+        setAnswer(res.name)
+        setGenres(res.genre)
+        setShort(res.short)
+        fetch(`/api/answer/${encodeURIComponent(res.url)}`)
+        .then(r => r.json())
+        .then(r => setAnswerUrl(r.url)) });
+  }
   
   useEffect(() => {
-    fetch(`/api/imdb`)
-    .then(res => res.json())
-    .then(res => {
-      setAnswer(res.name)
-      setGenres(res.genre)
-      setShort(res.short)
-      fetch(`/api/answer/${encodeURIComponent(res.url)}`)
-      .then(r => r.json())
-      .then(r => setAnswerUrl(r.url)) });
+    try{
+      fetching()
+    }
+    catch(error){
+      console.log("Failed Once Trying Again...")
+      fetching()
+    }
+
     }, [])
     return (
       <div className="min-h-screen min-w-fit p-8 flex flex-col text-center items-center justify-center select-none relative bg-cover bg-center bg-[url('../public/background.png')] space-y-1">
