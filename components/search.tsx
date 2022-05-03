@@ -17,14 +17,14 @@ const Search: React.FC = () => {
     const updateList = (e: any) => {
         e.preventDefault()
         if(input.current?.value && context?.guesses && context?.guesses.length <= 4 && !context.guesses.includes(input.current.value)){
+            context?.setGuesses(input.current?.value)
+            setSearchResults([])
+            setYearResults([])    
             if(context?.movieName.toLowerCase().trim().replace(/[^a-zA-Z0-9]/g,'') == input.current?.value.toLowerCase().trim().replace(/[^a-zA-Z0-9]/g,'')) {
                 setPopup('won')
                 return
             }
-            context?.setGuesses(input.current?.value)
             input.current.value = ""
-            setSearchResults([])
-            setYearResults([])    
         }
         
         if(context?.guesses.length == 4) setPopup("lost")

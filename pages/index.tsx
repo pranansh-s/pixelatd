@@ -34,12 +34,6 @@ const Home: NextPage = () => {
       .then(r => r.json())
       .then(r => setAnswerUrl(r.url)) });
     }, [])
-    
-    useEffect(() => {
-      if(answer){
-        console.log(answer)
-      }
-    }, [answer])
     return (
       <div className="min-h-screen min-w-fit p-8 flex flex-col text-center items-center justify-center select-none relative bg-cover bg-center bg-[url('../public/background.png')] space-y-1">
       <Popup name={help || ""}/>

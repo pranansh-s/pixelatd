@@ -18,7 +18,7 @@ export default async function handler( req: NextApiRequest, res: NextApiResponse
   var rand = randomInt(100)
   re.name = $('.lister-item h3 a').eq(rand).text()
   re.genre = $('.lister-item-content .genre').eq(rand).text().split(',')
-  re.short = $('.ratings-bar').eq(rand).next().text().trim()
+  re.short = $('.lister-item-content p.text-muted').eq(2 * rand + 1).text().trim().replace("See full summary", '')  
     
   if(re.name){
       const q = re.name.trim().replace(/\s/g, '+')
