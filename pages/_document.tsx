@@ -19,6 +19,7 @@ import Document, {
           <link rel="icon" href="/favicon.ico" />          
           <meta name="description" content="Poster/Movie guessing game, where you guess movies from their blurred posters"/>
           <meta property='og:title' content='Pixelatd'/>
+          <meta name="google-site-verification" content="GL83bwDes4GKEoNh1nM55lYwcAStf1a5dxKYgpvqtbQ" />
           <link href="https://fonts.googleapis.com/css2?family=Francois+One&family=Gidugu&family=Hind+Madurai:wght@600&display=swap" rel="stylesheet" />
           </Head>
           <body>
