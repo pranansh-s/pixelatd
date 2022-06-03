@@ -1,9 +1,11 @@
 import React, { useContext } from 'react'
 import Image from 'next/image'
 
-import insta from '../public/instagram.png'
-import github from '../public/github.png'
+import insta from '../public/instagram.webp'
+import github from '../public/github.webp'
 import Props, { MovieContext } from '../utils/contexts'
+
+import corn from '../public/corn.webp'
 
 const Popup: React.FC<Props> = ({ name }) => {
     const context = useContext(MovieContext)
@@ -11,7 +13,7 @@ const Popup: React.FC<Props> = ({ name }) => {
     return(
         <div className={`md:absolute md:w-full md:h-full bg-gradient-to-b from-black/80 via-black/50 to-black/80 z-50 top-0 left-0 flex justify-center  ${name ? 'visible' : 'invisible'}`}>
             <div className={`${name == 'help' ? 'md:w-[28rem]' : 'md:w-[38rem]'} md:h-fit md:relative h-full m-auto w-full fixed py-20 rounded-md bg-primary top-0 left-0 flex flex-col justify-center items-center border-4 ${name == 'won' ? 'border-green-500' :  name == 'lost' ? 'border-red-500' : "border-[#5a95c9]"}`}>
-                <Image className='opacity-5' src="https://media.istockphoto.com/photos/background-of-fresh-made-popcorn-picture-id149066514?k=20&m=149066514&s=612x612&w=0&h=xJWeVgSCXaqj4A-CPVZeJrFoH98StvyEAs9SJQMZKVo=" alt="background" layout='fill'/>
+                <Image className='opacity-5' src={corn} alt="background" layout='fill'/>
                 {name != "help" ? 
                 <>
                     <span className='md:text-xl text-2xl text-white/40 font-Francois'>{name == "won" ? `Congratulations! You Got It in ${context?.guesses.length} Guess${context?.guesses.length || 5 > 1 ? 'es' : '' }` : name == "lost" ? `Better Luck Next Time, It was...` : ""}</span>

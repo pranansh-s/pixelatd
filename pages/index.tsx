@@ -48,7 +48,7 @@ const Home: NextPage = () => {
     fetching()
     }, [])
     return (
-      <div className="min-h-screen min-w-fit p-8 flex flex-col text-center items-center justify-center select-none relative bg-cover bg-center bg-[url('../public/background.png')] space-y-1">
+      <div className="min-h-screen min-w-fit p-8 flex flex-col text-center items-center justify-center select-none relative bg-cover bg-center bg-[url('../public/background.webp')] space-y-1">
       <Popup name={help || ""}/>
       {help ? <div className='md:relative fixed md:top-32 md:left-44 top-[5%] left-[90%] inline-block cursor-pointer active:animate-size z-50' onClick={() => setHelp("")}><Image src={crossI} width={20} height={20} alt="close"/></div> : ""}
       <div onClick={() => setHelp("help")} className='absolute active:animate-size right-0 top-5 md:m-10 m-5 cursor-pointer'>
