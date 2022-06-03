@@ -40,7 +40,7 @@ const Home: NextPage = () => {
         .then(r => setAnswerUrl(r.url)) })
         .catch(err => {
           console.log(err, "trying again")
-          window.location.reload()
+          fetching()
         });
   }
   
