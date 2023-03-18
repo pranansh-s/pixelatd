@@ -78,7 +78,7 @@ const Search: React.FC = () => {
                 </div>
             </div>
 
-            <Popup name={popup || ""}/>
+            <Popup name={popup}/>
         </>
     )
 }

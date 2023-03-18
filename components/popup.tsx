@@ -11,9 +11,8 @@ const Popup: React.FC<Props> = ({ name }) => {
     const context = useContext(MovieContext)
     const link = context?.url
     return(
-        <div className={`md:absolute md:w-full md:h-full bg-gradient-to-b from-black/80 via-black/50 to-black/80 z-50 top-0 left-0 flex justify-center  ${name ? 'visible' : 'invisible'}`}>
-            <div className={`${name == 'help' ? 'md:w-[28rem]' : 'md:w-[38rem]'} md:h-fit md:relative h-full m-auto w-full fixed py-20 rounded-md bg-primary top-0 left-0 flex flex-col justify-center items-center border-4 ${name == 'won' ? 'border-green-500' :  name == 'lost' ? 'border-red-500' : "border-[#5a95c9]"}`}>
-                <Image className='opacity-5' src={corn} alt="background" layout='fill'/>
+        <div className={`md:absolute md:w-full md:h-full z-50 top-0 left-0 flex justify-center  ${name ? 'visible' : 'invisible'}`}>
+            <div className={`${name == 'help' ? 'md:w-[28rem]' : 'md:w-[38rem]'} md:h-fit md:relative h-full m-auto w-full fixed py-20 rounded-md bg-primary top-0 left-0 flex flex-col justify-center items-center border-4`}>
                 {name != "help" ? 
                 <>
                     <span className='md:text-xl text-2xl text-white/40 font-Francois'>{name == "won" ? `Congratulations! You Got It in ${context?.guesses.length} Guess${context?.guesses.length || 5 > 1 ? 'es' : '' }` : name == "lost" ? `Better Luck Next Time, It was...` : ""}</span>
